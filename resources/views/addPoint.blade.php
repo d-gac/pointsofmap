@@ -12,7 +12,7 @@
 <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
     <h1 class="mb-4">Add point</h1>
     {{--    <p>testowanie!!!!</p>--}}
-    <form method="POST" action='{{url('/addPoint')}}'>
+    <form style="min-width: 30%;" method="POST" action='{{url('/addPoint')}}'>
 
         @csrf
 
@@ -24,31 +24,21 @@
             @endif
         </div>
 
-        <div class="d-flex bd-highlight mb-3">
-            <div class="p-2 bd-highlight ">
-                <label>Name</label>
-            </div>
-            <div class="ms-auto p-2 bd-highlight">
-                <input value="{{ old('name') }}" type="text" class="border rounded mb-10" name="name" id="name">
-            </div>
+        <div class="input-group mb-3">
+            <span style="width: 30%;" class="input-group-text" id="inputGroup-sizing-default">Name</span>
+            <input value="{{ old('name') }}" name="name" id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <div class="d-flex bd-highlight mb-3">
-            <div class="p-2 bd-highlight">
-                <label>Lat</label>
-            </div>
-            <div class="ms-auto p-2 bd-highlight">
-                <input value="{{ old('lat') }}" type="text" class="border rounded mb-10" name="lat" id="lat">
-            </div>
+        <div class="input-group mb-3">
+            <span style="width: 30%;" class="input-group-text" id="inputGroup-sizing-default">Lat</span>
+            <input value="{{ old('lat') }}" name="lat" id="lat" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-        <div class="d-flex bd-highlight mb-3">
-            <div class="p-2 bd-highlight">
-                <label>Lng</label>
-            </div>
-            <div class="ms-auto p-2 bd-highlight">
-                <input value="{{ old('lng') }}" type="text" class="border rounded mb-10" name="lng" id="lng">
-            </div>
+
+        <div class="input-group mb-3">
+            <span style="width: 30%;" class="input-group-text" id="inputGroup-sizing-default">Lng</span>
+            <input value="{{ old('lng') }}" name="lng" id="lng" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
+
 
         @if ($errors->any())
             <div class="alert alert-danger">
